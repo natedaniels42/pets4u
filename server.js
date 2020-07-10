@@ -36,7 +36,7 @@ app.get('/pets', (req, res) => {
 
 //Pet Show Page
 app.get('/pets/:index', (req, res) => {
-    res.render('pets/show');
+    res.render('pets/new');
 });
 
 //404 Error

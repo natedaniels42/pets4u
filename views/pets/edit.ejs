@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets4U</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/pets">Available Pets</a>
+            <a href="/locations">Search By Location</a>
+            <a href="/pets/new">New Pet</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Edit Pet</h1>
+
+        <form action="/pets/<%= index %>?_method=PUT" method="POST">
+        
+            Name: <input type="text" name="name" /> <br/><br/>
+      
+            Pet Type: <input type="text" name="petType" /> <br/><br/>
+
+            Sex: <input type="text" name="sex" /> <br/><br/>
+      
+            Age: <input type="text" name="age" /> <br/><br/>
+
+            Breed/Species: <input type="text" name="breedSpecies" /> <br/><br/>
+      
+            Location: <input type="text" name="location" /> <br/><br/>
+
+            Neutered: <input type="text" name="neutered" /> <br/><br/>
+
+            Description: <input type="text" name="neutered" /> <br/><br/>
+      
+            <button type="submit">Add Pet</button>
+      
+          </form>
+
+    </main>
+    
+</body>
+</html>
