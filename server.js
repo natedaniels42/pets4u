@@ -16,12 +16,33 @@ app.use(express.urlencoded({extended: false}));
 //app.use('/locations', locationsController);
 //app.use('/pets', petsController);
 
-app.get('/', (req, res) => {
-    res.send('<h1>I am a Home Page</h1>');
-})
 
+//Routes--------------------
+
+//Home
+app.get('/', (req, res) => {
+    res.render('index')
+});
+
+//Locations Index Page
+app.get('/locations', (req, res) => {
+    res.render('locations/index');
+});
+
+//Pets Index Page
+app.get('/pets', (req, res) => {
+    res.render('pets/index');
+});
+
+//Pet Show Page
+app.get('/pets/:index', (req, res) => {
+    res.render('pets/show');
+});
+
+//404 Error
 app.get('*', (req, res) => {
     res.send('<h1>404 Page Not Found</h1>');
 })
 
+//Server Listener
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
