@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const methodOverride = require('method-override');
-const locationsController = require('/controllers/locationsController');
-const petsController = require('/controllers/petsController');
+const locationsController = require('./controllers/locationsController');
+const petsController = require('./controllers/petsController');
 
 app.set('view engine', 'ejs');
 
