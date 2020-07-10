@@ -17,8 +17,8 @@ app.use(express.urlencoded({extended: false}));
 //app.use('/pets', petsController);
 
 app.get('/', (req, res) => {
-    res.send('<h1>I am a Home Page</h1>');
-})
+    res.render('index')
+});
 
 app.get('*', (req, res) => {
     res.send('<h1>404 Page Not Found</h1>');
