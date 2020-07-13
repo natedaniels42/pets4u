@@ -19,17 +19,7 @@ const PETS = require('../data/petsList');
 
 //Edit One Pet
 
-//Update One Pet
 
-<<<<<<< HEAD
-//Delete One Pet
-
-=======
-        res.render('pets/adopt', {
-            pet: foundPet,
-        });
-    })
-})
 
 router.get('/:id/edit', (req, res) => {
     db.Pet.findById(req.params.id, (err, foundPet) => {
@@ -59,5 +49,4 @@ router.delete('/:id', (req, res) => {
     })
 })
 //Something
->>>>>>> submaster
 module.exports = router;
