@@ -16,6 +16,15 @@ router.post('/', (req, res) => {
         res.redirect('/pets')
     })
 })
-    
+
+router.get('/', (req, res) => {
+    db.Pet.find({}, (err, foundPet) => {
+        if (err) console.log(err);
+
+        res.render('pets/index', {
+            pet: foundPet
+        });
+    });
+});
 
 module.exports = router;
