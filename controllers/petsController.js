@@ -37,4 +37,24 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/:id/edit', (req, res) => {
+    db.Pet.findById(req.params.id, (err, foundPet) => {
+        if (err) console.log(err);
+
+        res.render('pets/edit', {
+            pet: foundPet
+        })
+    })
+});
+
+router.put('/:id', (req, res) => {
+    db.Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatedPet) => {
+        if (err) console.log(err);
+
+        console.log(req.params.id);
+        console.log(updatedPet);
+        res.redirect('/pets/' + req.params.id);
+    })
+})
+
 module.exports = router;
