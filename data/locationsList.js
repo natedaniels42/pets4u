@@ -48,15 +48,15 @@ const locationsList = [
         state: 'DE'
     },
     {
-        city: 'Charlotte'
+        city: 'Charlotte',
         state: 'NC'
     },
     {
-        city: 'Raleigh'
+        city: 'Raleigh',
         state: 'NC'
     },
     {
-        city: 'Asheville'
+        city: 'Asheville',
         state: 'NC'
     },
 ];
