@@ -28,7 +28,7 @@ const petSchema = new mongoose.Schema({
             type: String,
             required: true
     },
-    neutered: String,
+    neutered: Boolean,
     description: {
         type: String,
         required: true
