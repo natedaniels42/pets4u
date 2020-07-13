@@ -22,7 +22,20 @@
         <section class='locations-list'> 
             
             <!-- Hard coding locations for now, replace with locations model later w/ ejs syntax -->
-            <ul id=""> 
+            
+            <% for (let i = 0; i < locations.length; i++) { %>
+
+                
+                  <ul><%= locations[i].state %>
+
+                  <li><a href="/locations/<%= i %>">
+                <%= locations[i].city[i].cityName %></a></li>
+
+            </ul>
+
+                <% } %>
+            
+            <!-- <ul id=""> 
                 <li>Delaware<ul>
                     <li><a href='/locations/:index'>San Diego</a></li>
                     <li><a href=''>Los Angeles</a></li>
@@ -56,7 +69,7 @@
                 </ul></li> <br/>
 
 
-            </ul>
+            </ul> -->
 
             
 

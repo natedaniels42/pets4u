@@ -11,7 +11,7 @@ const LOCATIONS = require('../data/locationsList');
 //Single Location
 router.get('/:index', (req, res) => {
     res.render('locations/show', {
-        locations: LOCATIONS[req.params.index]
+        location: LOCATIONS[req.params.index]
     });
 });
 
