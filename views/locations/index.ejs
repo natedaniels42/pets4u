@@ -23,17 +23,11 @@
             
             <!-- Hard coding locations for now, replace with locations model later w/ ejs syntax -->
             
-            <% for (let i = 0; i < locations.length; i++) { %>
-
-                
-                  <ul><%= locations[i].state %>
-
-                  <li><a href="/locations/<%= i %>">
-                <%= locations[i].city[i].cityName %></a></li>
-
-            </ul>
-
-                <% } %>
+         <% for (let i = 0; i < locations.length; i++) { %>
+            <% for (let j = 0; j < (locations[i].city).length; j++) { %>
+                <h4> <%= locations[i].city[j].cityName %> </h4>
+            <% } %>
+        <% } %>
             
             <!-- <ul id=""> 
                 <li>Delaware<ul>
