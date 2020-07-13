@@ -18,6 +18,22 @@
 
     <main>
         <h1>Pet Show Page</h1>
+        <h1><%=pet.name%></h1>
+        <!--<img src="<%=//pet.image%>">-->
+        <p><%=pet.animal%></p>
+        <p><%=pet.breed%></p>
+        <p><%=pet.location%></p>
+        <p><%=pet.age%></p>
+        <p><%=pet.description%></p>
+        <form action="/pets/<%=pet._id%>/adopt" method="GET">
+            <button type="submit">Adopt</button>
+        </form>
+        <hr/><br/><br/>
+
+        <a href="/pets/<%=pet._id%>/edit">Edit</a>
+        <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
     </main>
     
 </body>

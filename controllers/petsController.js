@@ -27,4 +27,14 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    db.Pet.findById(req.params.id, (err, foundPet) => {
+        if (err) console.log(err);
+
+        res.render('pets/show', {
+            pet: foundPet
+        })
+    })
+})
+
 module.exports = router;
