@@ -7,19 +7,6 @@ const PETS = require('../data/petsList');
 //to put in server
 // app.use('/pets', petsController);
 
-//Routes-------------------------------
-
-//New Pet
-
-//Create Pet
-
-//Single Pet
-
-//All Pets
-
-//Edit One Pet
-
-
 
 router.get('/:id/edit', (req, res) => {
     db.Pet.findById(req.params.id, (err, foundPet) => {
