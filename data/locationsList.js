@@ -1,19 +1,10 @@
+const mongoose = require('mongoose');
 const db = require('../models');
 
 const locationsList = [
     {
         state: 'Virginia',
-        city: [
-            {
-                cityName: 'Fairfax',
-            },
-            {
-                cityName: 'Lorton',
-            },
-            {
-                cityName: 'Fredricksburg',
-            },
-        ],
+        city: [ 'Fairfax','Lorton','Fredricksburg']
     }
 ];
 
@@ -121,4 +112,11 @@ db.Location.deleteMany({}, (err, result) => {
     // },
 // ];
 
-module.exports = locationsList;
+db.Location.create(locationsList, (err, createdLocations) => {
+    if(err) console.log(err);
+
+    console.log(createdLocations);
+    process.exit();
+})
+
+//module.exports = locationsList;

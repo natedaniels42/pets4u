@@ -10,9 +10,9 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
     if(req.body.neutered === 'on') {
-        req.body.neutered = true;
+        req.body.neutered = 'neutered';
     } else {
-        req.body.neutered = false;
+        req.body.neutered = 'not neutered';
     }
     
     db.Pet.create(req.body, (err, newPet) => {
@@ -71,9 +71,9 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req, res) => {
     if (req.body.neutered === 'on') {
-        req.body.neutered = true;
+        req.body.neutered = 'neutered';
     } else {
-        req.body.neutered = false;
+        req.body.neutered = 'not neutered';
     }
     
     db.Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatedPet) => {
