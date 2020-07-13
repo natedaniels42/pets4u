@@ -26,21 +26,6 @@ app.get('/', (req, res) => {
     res.render('index')
 });
 
-//Locations Index Page
-app.get('/locations', (req, res) => {
-    res.render('locations/index');
-});
-
-//Pets Index Page
-app.get('/pets', (req, res) => {
-    res.render('pets/index');
-});
-
-//Pet Show Page
-app.get('/pets/:index', (req, res) => {
-    res.render('pets/new');
-});
-
 //404 Error
 app.get('*', (req, res) => {
     res.send('<h1>404 Page Not Found</h1>');

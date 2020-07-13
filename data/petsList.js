@@ -1,7 +1,7 @@
 const petList = [
     {
         name: 'Toby',
-        image:
+        image: {},
         location: 'Fairfax, VA',
         sex: 'm',
         age: '2 years old',
@@ -12,7 +12,7 @@ const petList = [
     },
     {
         name: 'Squire',
-        image:
+        image: {},
         location: 'Lorton, VA',
         sex: 'm',
         age: '7 years old',
@@ -23,7 +23,7 @@ const petList = [
     },
     {
         name: 'Sera',
-        image:
+        image: {},
         location: 'Fredricksburg, VA',
         sex: 'f',
         age: '3 years old',
@@ -34,7 +34,7 @@ const petList = [
     },
     {
         name: 'Sophie',
-        image:
+        image: {},
         location: 'Baltimore, MD',
         sex: 'f',
         age: '2 months old',
@@ -45,190 +45,190 @@ const petList = [
     },
     {
         name: 'Ra',
-        image:
+        image: {},
         location: 'Annapolis, MD',
         sex: 'm',
         age: '2 years old',
         animalType: 'dog',
         breedSpecies: 'great dane',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'George',
-        image:
+        image: {},
         location: 'Fredrick, MD',
         sex: 'm',
         age: '5 years old',
         animalType: 'dog',
         breedSpecies: 'lab mix',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Henry',
-        image:
+        image: {},
         location: 'Philadelphia, PA',
         sex: 'm',
         age: '4 years old',
         animalType: 'dog',
         breedSpecies: 'english bulldog',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Sheila',
-        image:
+        image: {},
         location: 'Pittsburg, PA',
         sex: 'f',
         age: '2 years old',
         animalType: 'dog',
         breedSpecies: 'pit bull',
         neutered: false,
-        description: 
+        description: '',
     },
     {
         name: 'Macie',
-        image:
+        image: {},
         location: 'Scranton, PA',
         sex: 'f',
         age: '1 year old',
         animalType: 'dog',
         breedSpecies: 'lab mix',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Mr. Mouse',
-        image:
+        image: {},
         location: 'Newark, DE',
         sex: 'm',
         age: '2 years old',
         animalType: 'cat',
         breedSpecies: 'domestic shorthair',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Sophie',
-        image:
+        image: {},
         location: 'Dover, DE',
         sex: 'f',
         age: '3 years old',
         animalType: 'cat',
         breedSpecies: 'ragdoll',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Tiger',
-        image:
+        image: {},
         location: 'Wilmington, DE',
         sex: 'm',
         age: '5 years old',
         animalType: 'cat',
         breedSpecies: 'scottish fold',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Richard',
-        image:
+        image: {},
         location: 'Charlotte, NC',
         sex: 'm',
         age: '1 year old',
         animalType: 'cat',
         breedSpecies: 'domestic shorthair',
         neutered: false,
-        description: 
+        description: '',
     },
     {
         name: 'Pony',
-        image:
+        image: {},
         location: 'Raleigh, NC',
         sex: 'm',
         age: '8 years old',
         animalType: 'dog',
         breedSpecies: 'lab mix',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Whiskers',
-        image:
+        image: {},
         location: 'Asheville, NC',
         sex: 'm',
         age: '3 years old',
         animalType: 'cat',
         breedSpecies: 'ragdoll',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Pawpaw',
-        image:
+        image: {},
         location: 'Asheville, NC',
         sex: 'm',
         age: '5 years old',
         animalType: 'cat',
         breedSpecies: 'siamese',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Marshall',
-        image:
+        image: {},
         location: 'Raleigh, NC',
         sex: 'm',
         age: '10 years old',
         animalType: 'cat',
         breedSpecies: 'bengal',
         neutered: false,
-        description: 
+        description: '',
     },
     {
         name: 'Lobo',
-        image:
+        image: {},
         location: 'Charlotte, NC',
         sex: 'm',
         age: '6 years old',
         animalType: 'cat',
         breedSpecies: 'bengal',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Rasha',
-        image:
+        image: {},
         location: 'Wilmington, DE',
         sex: 'm',
         age: '8 years old',
         animalType: 'cat',
         breedSpecies: 'domestic shorthair',
         neutered: true,
-        description: 
+        description: '',
     },
     {
         name: 'Raja',
-        image:
+        image: {},
         location: 'Lorton, VA',
         sex: 'm',
         age: '2 years old',
         animalType: 'snake',
         breedSpecies: 'ball python',
         neutered: false,
-        description: 
+        description: '',
     },
     {
         name: 'Fluffy',
-        image:
+        image: {},
         location: 'Fredricksburg, VA',
         sex: 'm',
         age: '2 years old',
         animalType: 'chameleon',
         breedSpecies: 'panther chameleon',
         neutered: false,
-        description: 
+        description: '',
     },
 ];
 
