@@ -1,22 +1,64 @@
+const db = require('../models');
+
 const locationsList = [
     {
         state: 'Virginia',
         city: [
             {
                 cityName: 'Fairfax',
-                id: 0
             },
             {
                 cityName: 'Lorton',
-                id: 1
             },
             {
                 cityName: 'Fredricksburg',
-                id: 2
             },
         ],
     }
 ];
+
+db.Location.deleteMany({}, (err, result) => {
+    if (err) {
+        console.log(err);
+        process.exit();
+    }
+    console.log(`Deleted ${result.deletedCount} recipes.`);
+
+    console.log('Deleting all reviews');
+    db.Review.deleteMany({}, (err, result) => {
+        if (err) {
+            console.log(err);
+            process.exit();
+        };
+        console.log(`Deleted ${result.deletedCount} reviews.`);
+
+        db.User.deleteMany({}, (err, result) => {
+            if (err) {
+                console.log(err);
+                process.exit();
+            };
+            console.log(`Deleted ${result.deletedCount} users.`);
+
+            db.User.create(users, (err, newUsers) => {
+                if (err) {
+                    console.log(err);
+                    process.exit();
+                }
+                console.log(`Created ${newUsers.length} users.`);
+
+                console.log("Creating new recipes.");
+                db.Recipe.create(recipes, (err, newRecipes) => {
+                    if (err) {
+                        console.log(err);
+                        process.exit();
+                    } 
+                    console.log(`Created ${newRecipes.length} recipes.`);
+                    process.exit();
+                });
+            });
+        });
+    });
+});
     // {
     //     city: 'Fairfax',
     //     state: 'VA'
