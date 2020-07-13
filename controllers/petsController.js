@@ -27,6 +27,11 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/confirm', (req, res) => {
+    
+    res.render('pets/confirm');
+})
+
 router.get('/:id', (req, res) => {
     db.Pet.findById(req.params.id, (err, foundPet) => {
         if (err) console.log(err);
@@ -34,6 +39,17 @@ router.get('/:id', (req, res) => {
         res.render('pets/show', {
             pet: foundPet
         })
+    })
+})
+
+
+router.get('/:id/adopt', (req, res) => {
+    db.Pet.findById(req.params.id, (err, foundPet) => {
+        if (err) console.log(err);
+
+        res.render('pets/adopt', {
+            pet: foundPet,
+        });
     })
 })
 
