@@ -57,4 +57,12 @@ router.put('/:id', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+    db.Pet.findByIdAndDelete(req.params.id, (err, deletedPet) => {
+        if (err) console.log(err);
+
+        res.redirect('/pets');
+    })
+})
+
 module.exports = router;
