@@ -52,7 +52,7 @@ const petList = [
         animalType: 'dog',
         breedSpecies: 'great dane',
         neutered: true,
-        description: '',
+        description: 'Ra is a big love bug who likes long walks in the park and long naps by the fireplace. He is great with other dogs and small children. Ra would make the perfect addition to any family! He is housebroken and up to date on his rabies and bordatella shots.',
     },
     {
         name: 'George',
@@ -63,7 +63,7 @@ const petList = [
         animalType: 'dog',
         breedSpecies: 'lab mix',
         neutered: true,
-        description: '',
+        description: 'George is a frisky lab who wants nothing else but to please his people! He loves to go to the dog park to play fetch and run around with his other doggy friends. He is good with adults, children, and other dogs, but would do best in a household with no cats. He is housebroken and is up to date on his rabies and bordatella shots.',
     },
     {
         name: 'Henry',
@@ -74,7 +74,7 @@ const petList = [
         animalType: 'dog',
         breedSpecies: 'english bulldog',
         neutered: true,
-        description: '',
+        description: 'Henry is a goofy bulldog with a big heart. Not a fan of long walks, but loves to follow his people around the house. Would do best  in a household with no small children or other dogs. He is housebroken and up to date on his rabies and bordatella shots.',
     },
     {
         name: 'Sheila',
@@ -85,7 +85,7 @@ const petList = [
         animalType: 'dog',
         breedSpecies: 'pit bull',
         neutered: false,
-        description: '',
+        description: `Sheila loves giving kisses and getting belly rubs! She has never met a person she didn't immediately love, and is great with people and dogs of all ages. She would love nothing more than to chase tennis balls all day long with you! She is housebroken and up to date on her rabies and bordatella shots.`
     },
     {
         name: 'Macie',
@@ -96,7 +96,7 @@ const petList = [
         animalType: 'dog',
         breedSpecies: 'lab mix',
         neutered: true,
-        description: '',
+        description: `Macie is a hyper young lab mix with heaps of love to spare! She has energy for days and would do best in an active household with older children that she cant knock over during her zoomies. She is still working on house training, but is up to date with her rabies and bordatella shots.`,
     },
     {
         name: 'Mr. Mouse',
@@ -107,7 +107,7 @@ const petList = [
         animalType: 'cat',
         breedSpecies: 'domestic shorthair',
         neutered: true,
-        description: '',
+        description: 'Mr. Mouse is a big boy with a big appetite and a big purr',
     },
     {
         name: 'Sophie',

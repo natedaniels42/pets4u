@@ -112,11 +112,11 @@ db.Location.deleteMany({}, (err, result) => {
     // },
 // ];
 
-db.Location.create(locationsList, (err, createdLocations) => {
-    if(err) console.log(err);
+// db.Location.create(locationsList, (err, createdLocations) => {
+//     if(err) console.log(err);
 
-    console.log(createdLocations);
-    process.exit();
-})
+//     console.log(createdLocations);
+//     process.exit();
+// })
 
 //module.exports = locationsList;
