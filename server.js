@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 5000;
 const methodOverride = require('method-override');
 const locationsController = require('./controllers/locationsController');
 const petsController = require('./controllers/petsController');
+const multer = require('multer');
+const upload = multer({dest: 'public/images'});
 
 app.set('view engine', 'ejs');
 
