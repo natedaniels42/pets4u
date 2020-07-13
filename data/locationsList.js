@@ -4,12 +4,15 @@ const locationsList = [
         city: [
             {
                 cityName: 'Fairfax',
+                id: 0
             },
             {
                 cityName: 'Lorton',
+                id: 1
             },
             {
                 cityName: 'Fredricksburg',
+                id: 2
             },
         ],
     }
