@@ -7,6 +7,7 @@ const petsController = require('./controllers/petsController');
 const multer = require('multer');
 const upload = multer({dest: 'public/images'});
 
+
 app.set('view engine', 'ejs');
 
 app.use(methodOverride('_method'));
@@ -20,6 +21,7 @@ app.use('/pets', petsController);
 
 
 //Routes--------------------
+
 
 //Home
 app.get('/', (req, res) => {
