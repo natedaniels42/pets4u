@@ -10,8 +10,9 @@ const LOCATIONS = require('../data/locationsList');
 
 //Single Location
 router.get('/:index', (req, res) => {
+    console.log(req.params.index);
     res.render('locations/show', {
-        locations: LOCATIONS[req.params.index]
+        location: LOCATIONS[req.params.index]
     });
 });
 
