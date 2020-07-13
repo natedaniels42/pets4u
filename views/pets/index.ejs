@@ -20,9 +20,19 @@
         <h1>Available Pets</h1>
 
         <ul id='available-animals'>
-            <li><a href=''>Buddy</a></li>
-            <li><a href=''>Toby</a></li>
-            <li><a href=''>Sadie</a></li>
+            <% if (pet.length) { %>
+                <% for (let i = 0; i < pet.length; i++) { %>
+                    <li>
+                        <a href="/pets/<%=pet[i]._id%>">
+                            <h4><%=pet[i].name%></h4>
+                        </a>
+                        <!--<a href="/locations"><%=//pet[i].location%></a>-->
+                        <img src="../<%=pet[i].image%>">
+                    </li>
+                    <% } %>
+            <% } else { %>
+                <h4>Sorry No Pets</h4>
+            <% } %>
         </ul>
 
     </main>

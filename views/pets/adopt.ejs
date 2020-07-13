@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/pets">Available Pets</a>
+            <a href="/locations">Search By Location</a>
+            <a href="/pets/new">New Pet</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Adoption Page</h1>
+        <h2><%=pet.name%></h2>
+        <form action="/pets/confirm" method="GET">
+            <label for="name">Name:</label>
+            <input type="text" name="Name"/> <br/>
+            <label for="email">Email:</label>
+            <input type="text" name="email"/> <br/>
+            <button type="submit">Adopt</button>
+        </form>
+    </main>
+</body>
+</html>
