@@ -8,6 +8,14 @@ router.get('/new', (req, res) => {
     res.render('pets/new');
 });
 
-
+router.post('/', (req, res) => {
+    db.Pet.create(req.body, (err, newPet) => {
+        if (err) console.log(err);
+        
+        console.log(newPet);
+        res.redirect('/pets')
+    })
+})
+    
 
 module.exports = router;

@@ -6,8 +6,7 @@ const petSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        type: String,
-        required: true
+        type: Object,
     },
     location: {
         type: String,
@@ -21,7 +20,7 @@ const petSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    animalType: {
+    petType: {
         type: String,
         required: true
     },
@@ -29,7 +28,7 @@ const petSchema = new mongoose.Schema({
             type: String,
             required: true
     },
-    neutered: Boolean,
+    neutered: String,
     description: {
         type: String,
         required: true
