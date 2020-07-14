@@ -39,4 +39,4 @@ const locationsList = [
 })*/    
 
 
-//module.exports = locationsList;
+module.exports = locationsList;
