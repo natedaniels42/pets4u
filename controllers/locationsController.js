@@ -25,17 +25,20 @@ router.get('/:id', (req, res) => {
                     if (err) console.log(err);
                     
                     console.log(foundLocation);
-                    res.render('locations/show', {
-                        location: foundLocation.state,
-                        locationid: req.params.id,
-                        pet: foundPets
-                        
-                    })
+                    
                 })
+                    
+                
             }
+            res.render('locations/show', {
+                location: foundLocation.state,
+                locationid: req.params.id,
+                pet: foundPets
+            })
         })
     })
 })
+
 
 //All Locations
 router.get('/', (req, res) => {

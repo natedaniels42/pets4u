@@ -7,7 +7,7 @@ const petSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        type: Object,
+        type: String,
     },
     location: {
         type: String,
