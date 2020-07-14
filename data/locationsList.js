@@ -27,7 +27,7 @@ const locationsList = [
     
     
     
-/*db.Location.deleteMany({}, (err, deletedLocations) => {
+db.Location.deleteMany({}, (err, deletedLocations) => {
     if(err) console.log(err);
     
     db.Location.create(locationsList, (err, createdLocations) => {
@@ -36,7 +36,7 @@ const locationsList = [
         console.log(createdLocations);
         process.exit();
     })
-})*/    
+})    
 
 
 //module.exports = locationsList;

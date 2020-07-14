@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Location = require('./Location');
 
 const petSchema = new mongoose.Schema({
     name: {
@@ -17,8 +18,14 @@ const petSchema = new mongoose.Schema({
         required: true
     },
     age: {
-        type: String,
-        required: true
+        ageNumber: {
+            type: Number,
+            required: true
+        },
+        ageLength: {
+            type: String,
+            required: true
+        }
     },
     petType: {
         type: String,
