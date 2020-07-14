@@ -5,7 +5,14 @@ const multer = require('multer');
 const upload = multer({dest: '../public/images'});
 
 router.get('/new', (req, res) => {
-    res.render('pets/new');
+    db.Location.find({}, (err, allLocations) => {
+        if (err) console.log(err);
+
+        res.render('pets/new', {
+            location: allLocations
+        });
+
+    })
 });
 
 router.post('/', (req, res) => {
@@ -14,7 +21,7 @@ router.post('/', (req, res) => {
     } else {
         req.body.neutered = 'not neutered';
     }
-    
+    console.log(req.body);
     db.Pet.create(req.body, (err, newPet) => {
         if (err) console.log(err);
         
@@ -60,11 +67,16 @@ router.get('/:id/adopt', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-    db.Pet.findById(req.params.id, (err, foundPet) => {
+    db.Location.find({}, (err, allLocations) => {
         if (err) console.log(err);
 
-        res.render('pets/edit', {
-            pet: foundPet
+        db.Pet.findById(req.params.id, (err, foundPet) => {
+            if (err) console.log(err);
+    
+            res.render('pets/edit', {
+                pet: foundPet,
+                location: allLocations
+            })
         })
     })
 });
