@@ -21,13 +21,18 @@
     <main>
         <h1>Location Show Page</h1>
 
-        <h4>
-            <%= location %>
-        </h4>
-
-        <h4>
-            <%= locationid %>
-          </h4>
+        <h1>
+            <%= `${location}, ${locationid}` %>
+        </h1>
+        
+        <% if (!pet) { %>
+            <h4>No Pets at this location</h4>
+          <% } else { %>
+            <% for (let i = 0; i < pet.length; i++) { %>
+                <a href="/pets/<%=pet[i]._id%>"><%=pet[i].name%></a>
+                
+            <% } %> 
+          <% } %> 
     </main>
     
 </body>
