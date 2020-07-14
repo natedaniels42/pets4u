@@ -33,7 +33,7 @@ const petList = [
     },
     {
         name: 'Sera',
-        image: 'https://thepettown.com/wp-content/uploads/2019/10/Personality-and-Temperament-of-a-Border-Collie-Lab-Mix-Borador-Mix-Breed-Dog-Guide.jpg',
+        image: 'https://brooklinelabrescue.org/dev/wp-content/uploads/2017/12/20171006_105829-e1512917288855.jpg',
         location: 'Fredricksburg, Virginia',
         sex: 'f',
         age: {
