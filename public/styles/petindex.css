@@ -1,0 +1,12 @@
+body {
+    background: aquamarine;
+}
+
+.pet-image {
+    width: 50%;
+    height: 50%;
+}
+
+nav {
+    float: right;
+}
