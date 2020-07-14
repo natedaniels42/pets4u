@@ -5,9 +5,19 @@ const methodOverride = require('method-override');
 const locationsController = require('./controllers/locationsController');
 const petsController = require('./controllers/petsController');
 const multer = require('multer');
-const upload = multer({dest: 'public/images'});
+const upload = multer({dest: './public/images'});
 
+/*const storage = multer.diskStorage({
+    destination: './public/images/', 
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now() + Path2D.extname(file.originalname));
+    }
+})
 
+const upload = multer({
+    storage: storage
+}).single('myImage');
+*/
 app.set('view engine', 'ejs');
 
 app.use(methodOverride('_method'));
@@ -27,6 +37,7 @@ app.use('/pets', petsController);
 app.get('/', (req, res) => {
     res.render('index')
 });
+
 
 //404 Error
 app.get('*', (req, res) => {

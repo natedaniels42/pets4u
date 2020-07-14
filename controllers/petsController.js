@@ -3,6 +3,32 @@ const router = express.Router();
 const db = require('../models');
 const multer = require('multer');
 const upload = multer({dest: '../public/images'});
+/*
+const storage = multer.diskStorage({
+    destination: '../public/images/', 
+    
+})
+
+const upload = multer({
+    storage: storage,
+    limits: {filesize: 1000000},
+    fileFilter: function (req, file, cb) {
+        checkFileType(file, cb);
+    }
+}).single('myImage');
+
+function checkFileType(file, cb) {
+    const filetypes = /jpeg|jpg|png|gif/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+
+    if (mimtype && extname) {
+        return cb(null, true);
+    } else {
+        cb('Error: Images Only!');
+    }
+}
+*/
 
 router.get('/new', (req, res) => {
     db.Location.find({}, (err, allLocations) => {
@@ -15,21 +41,25 @@ router.get('/new', (req, res) => {
     })
 });
 
-router.post('/', (req, res) => {
-    if(req.body.neutered === 'on') {
+router.post('/', upload.single('image'), (req, res) => {
+    if (req.body.neutered === 'on') {
         req.body.neutered = 'neutered';
     } else {
         req.body.neutered = 'not neutered';
     }
     console.log(req.body);
+    console.log(req.file);
     db.Pet.create(req.body, (err, newPet) => {
         if (err)console.log(err);
-        
+            
+        newPet.image = req.file.path;
         console.log(newPet);
         res.redirect('/pets')
+        })
     })
-})
 
+
+    
 router.get('/', (req, res) => {
     db.Pet.find({}, (err, foundPet) => {
         if (err) console.log(err);
