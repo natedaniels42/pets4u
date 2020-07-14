@@ -2,24 +2,33 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-const LOCATIONS = require('../data/locationsList');
+//const LOCATIONS = require('../data/locationsList');
 
 //Current location '/locations'
 
 //Routes-------------------------------
 
 //Single Location
-router.get('/:index', (req, res) => {
-    console.log(req.params.index);
-    res.render('locations/show', {
-        location: LOCATIONS[req.params.index]
+router.get('/:id', (req, res) => {
+    db.Location.findOne({city: req.params.id}, (err, foundLocation) => {
+        if (err) console.log(err);
+        
+        console.log(foundLocation);
+        res.render('locations/show', {
+            location: foundLocation.state,
+            locationid: req.params.id
+        });
     });
 });
 
 //All Locations
 router.get('/', (req, res) => {
-    res.render('locations/index', {
-        locations: LOCATIONS,
+    db.Location.find({}, (err, allLocations) => {
+       if(err) console.log(err); 
+       
+       res.render('locations/index', {
+           locations: allLocations,
+        })
     })
 });
 

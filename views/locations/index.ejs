@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <script defer src="/js/app.js"></script>
     <title>Pets4U</title>
 </head>
 <body>
@@ -28,7 +30,11 @@
 
                 <% for (let j = 0; j < (locations[i].city).length; j++) { %>
 
+<<<<<<< HEAD
                 <li><a href="<%= locations[i].city[j] %>"> <%= locations[i].city[j].cityName %> </a></li>
+=======
+                <li><a href="locations/<%= locations[i].city[j] %>"> <%= locations[i].city[j] %> </a></li>
+>>>>>>> submaster
 
                 <% } %>
 
