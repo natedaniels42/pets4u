@@ -33,6 +33,7 @@
 
             <% if (pet.length) { %>
                 <% for (let i = 0; i < pet.length; i++) { %>
+                    <div class="pet-listing">
                     <li>
                         <a href="/pets/<%=pet[i]._id%>">
                             <h4><%=pet[i].name%></h4>
@@ -40,6 +41,7 @@
                         <!--<a href="/locations"><%=//pet[i].location%></a>-->
                         <img class="pet-image" src="<%=pet[i].image%>">
                     </li>
+                </div>
                     <% } %>
             <% } else { %>
                 <h4>Sorry No Pets</h4>
@@ -48,6 +50,8 @@
         </ul>
 
     </main>
+
     <footer>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Ally Pittman & Nate Daniels </footer>
+
 </body>
 </html>

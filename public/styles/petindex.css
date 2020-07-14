@@ -1,12 +1,27 @@
 body {
-    background: aquamarine;
+    background: linear-gradient(white, aquamarine) !important;
 }
 
 .pet-image {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.pet-listing {
+    display: inline-block;
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+}
+
+li {
+    position: absolute;
+    margin-bottom: 25px;
 }
 
 nav {
     float: right;
 }
+

@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(white, rgb(66, 165, 158)) !important;
+    background: linear-gradient(white, aquamarine) !important;
 }
 
 footer {
@@ -49,9 +49,28 @@ footer {
     padding-bottom: 7px !important;
   }
 
-  footer, h1, h3 {
+  h6 {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0px !important;
+  }
+
+  h1 {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 76px !important;
+  }
+
+  footer, h3 {
       padding-top: 30px;
   }
+
+footer, p, h6, .btn {
+    font-family: 'Raleway', sans-serif;
+}
+
+h5, h3 {
+    font-family: 'Roboto', sans-serif;
+}
 
   p {
       padding-bottom: 30px;
