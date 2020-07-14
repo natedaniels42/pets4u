@@ -23,10 +23,7 @@ const locationsList = [
         city: ['Charlotte', 'Raleigh', 'Asheville']
     }
 ];
-   
-    
-    
-    
+  
 db.Location.deleteMany({}, (err, deletedLocations) => {
     if(err) console.log(err);
     

@@ -19,20 +19,24 @@
     </header>
 
     <main>
-        <h1>Location Show Page</h1>
 
         <h1>
             <%= `${locationid}, ${location}` %>
         </h1>
-        
+
+        <ul> 
         <% if (!pet) { %>
             <h4>No Pets at this location</h4>
-          <% } else { %>
-            <% for (let i = 0; i < pet.length; i++) { %>
-                <a href="/pets/<%=pet[i]._id%>"><%=pet[i].name%></a>
-                
-            <% } %> 
-          <% } %> 
+            <% } else { %>
+                <% for (let i = 0; i < pet.length; i++) { %>
+                    <li> 
+                        <a href="/pets/<%=pet[i]._id%>"><%=pet[i].name%></a> <br/>
+                        <img src="<%= pet[i].image %>">
+                    </li>
+                    <% } %> 
+                    <% } %> 
+        </ul>
+
     </main>
     
 </body>
