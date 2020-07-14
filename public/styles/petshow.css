@@ -1,3 +1,13 @@
 body {
-    background-color: aquamarine;
+    background: linear-gradient(white, aquamarine) !important;
 }
+
+.pet-image {
+    width: 50%;
+    height: 50%;
+}
+
+nav {
+    float: right;
+}
+
