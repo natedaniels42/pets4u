@@ -23,30 +23,30 @@
 
         <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
         
-            Name: <input type="text" name="name" /> <br/><br/>
+            Name: <input type="text" name="name" value="<%=pet.name%>"/> <br/><br/>
       
-            Pet Type: <input type="text" name="petType" /> <br/><br/>
+            Pet Type: <input type="text" name="petType" value="<%=pet.petType%>"/> <br/><br/>
 
-            Sex: <select name="sex">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+            Sex: <select name="sex" value="<%=pet.sex%>">
+                <option>Male</option>
+                <option>Female</option>
             </select> <br/><br/>
       
-            Age: <select name="age.ageNumber">
+            Age: <select name="age.ageNumber" value="<%=pet.age.ageNumber%>">
                 <% for (let i = 1; i < 50; i++) { %>
-                    <option value="<%=i%>"><%=i%></option>
+                    <option><%=i%></option>
                 <% } %>
             </select>        
-            <select name="age.ageLength">
+            <select name="age.ageLength" value="<%=pet.age.ageLength%>">
                 <option>months</option>
                 <option>years</option>
             </select>
                 
              <br/><br/>
 
-            Breed/Species: <input type="text" name="breedSpecies" /> <br/><br/>
+            Breed/Species: <input type="text" name="breedSpecies" value="<%=pet.breedSpecies%>"/> <br/><br/>
       
-            Location: <select name="location">
+            Location: <select name="location" value="<%=pet.location%>">
                 <% for (let i = 0; i < location.length; i++) { %>
                     <% for (let j = 0; j < location[i].city.length; j++) { %>
                     <option value="<%=`${location[i].city[j]}, ${location[i].state}`%>"><%=`${location[i].city[j]}, ${location[i].state}`%></option>
@@ -57,9 +57,9 @@
             </select> <br/><br/>
 
 
-            Neutered: <input type="checkbox" name="neutered" /> <br/><br/>
+            Neutered: <input type="checkbox" name="neutered"/> <br/><br/>
 
-            Description: <input type="text" name="description" /> <br/><br/>
+            Description: <input type="text" name="description" value="<%=pet.description%>"/> <br/><br/>
       
             <button type="submit">Add Pet</button>
       
