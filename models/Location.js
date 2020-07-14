@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Pet = require('./Pet');
 
 const locationSchema = new mongoose.Schema({
     state: {
@@ -9,6 +10,10 @@ const locationSchema = new mongoose.Schema({
         type: String,
         required: true
         }],
+    pets: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Pet'
+    }],
     })
 
 

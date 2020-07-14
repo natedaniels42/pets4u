@@ -13,13 +13,29 @@ router.get('/:id', (req, res) => {
     db.Location.findOne({city: req.params.id}, (err, foundLocation) => {
         if (err) console.log(err);
         
-        console.log(foundLocation);
-        res.render('locations/show', {
-            location: foundLocation.state,
-            locationid: req.params.id
-        });
-    });
-});
+        db.Pet.find({location: `${req.params.id}, ${foundLocation.state}`}, (err, foundPets) => {
+            if (err) console.log(err);
+            
+  
+            if(foundPets.length) {
+                for (let i = 0; i < foundPets.length; i++) {
+                    foundLocation.pets.push(foundPets[i]);
+                }
+                foundLocation.save((err, foundLocation) => {
+                    if (err) console.log(err);
+                    
+                    console.log(foundLocation);
+                    res.render('locations/show', {
+                        location: foundLocation.state,
+                        locationid: req.params.id,
+                        pet: foundPets
+                        
+                    })
+                })
+            }
+        })
+    })
+})
 
 //All Locations
 router.get('/', (req, res) => {
