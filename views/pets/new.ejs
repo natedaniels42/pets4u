@@ -19,20 +19,21 @@
     </header>
 
     <main>
-        <h1>Add New Pet</h1>
-
+        
         <form action="/pets" method="POST">
 
-            Name: <input type="text" name="name" /> <br/><br/>
+            <h1>Add New Pet</h1>
+            
+            <span class="category">Name:</span> <input type="text" name="name" /> <br/><br/>
       
-            Pet Type: <input type="text" name="petType" /> <br/><br/>
+             <span class="category">Pet Type:</span> <input type="text" name="petType" /> <br/><br/>
 
-            Sex: <select name="sex">
+             <span class="category">Sex:</span> <select name="sex">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select> <br/><br/>
       
-            Age: <select name="age.ageNumber">
+            <span class="category">Age:</span> <select name="age.ageNumber">
                 <% for (let i = 1; i < 50; i++) { %>
                     <option value="<%=i%>"><%=i%></option>
                 <% } %>
@@ -43,9 +44,10 @@
             </select>
                 
              <br/><br/>
-            Breed/Species: <input type="text" name="breedSpecies" /> <br/><br/>
+
+             <span class="category">Breed/Species:</span> <span><input type="text" name="breedSpecies" /></span> <br/><br/>
       
-            Location: <select name="location">
+             <span class="category">Location:</span> <span><select name="location">
                 <% for (let i = 0; i < location.length; i++) { %>
                     <% for (let j = 0; j < location[i].city.length; j++) { %>
                     <option value="<%=`${location[i].city[j]}, ${location[i].state}`%>"><%=`${location[i].city[j]}, ${location[i].state}`%></option>
@@ -53,11 +55,11 @@
                     <% } %>
                 <% } %>
             
-            </select> <br/><br/>
+            </select></span> <br/><br/>
 
-            Neutered: <input type="checkbox" name="neutered" /> <br/><br/>
+            <span class="category">Neutered:</span> <span><input type="checkbox" name="neutered" /></span> <br/><br/>
 
-            Description: <textarea name="description"></textarea> <br/><br/>
+            <span class="category">Description:</span> <span><textarea name="description"></textarea></span> <br/><br/>
       
             <button type="submit">Add Pet</button>
       

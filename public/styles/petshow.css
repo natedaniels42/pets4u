@@ -2,12 +2,65 @@ body {
     background: linear-gradient(white, aquamarine) !important;
 }
 
-.pet-image {
+nav {
+    float: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav > a {
+    padding: 10px;
+}
+
+img {
     width: 50%;
     height: 50%;
 }
 
-nav {
-    float: right;
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 30px;
+  }
+
+  .pet-image {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  .pet-text {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.pet-info {
+      padding-left: 30px;
+      padding-top: 30px;
+      width: 75%;
+      font-family: 'Roboto', sans-serif;
 }
 
+.category {
+      display:inline-block;
+      padding-right: 15px;
+      font-family: 'Raleway', sans-serif;
+      text-decoration: underline;
+}
+
+.delete-butt {
+      display: inline-block;
+      padding-left: 30px;
+      font-family: 'Raleway', sans-serif;
+}
+
+.edit-delete {
+      padding-left: 100px;
+      font-family: 'Raleway', sans-serif;
+}
+
+.adopt-butt {
+    padding-left: 125px;
+    font-family: 'Raleway', sans-serif;
+}

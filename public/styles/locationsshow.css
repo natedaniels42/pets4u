@@ -3,13 +3,46 @@ body {
     background-repeat: no-repeat;
 }
 
-img {
-    width: 50%;
-    height: 50%;
-}
-
 nav {
     float: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav > a {
+    padding: 10px;
+}
+
+h1 {
+    padding-left: 30px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
+}
+
+li > a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+}
+
+.pet-image {
+    width: 100%;
+    height: 100%;
+}
+
+.pet-listing {
+    display: inline-block;
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    overflow: hidden;
+}
+
+li {
+    position: absolute;
+    padding: 15px;
 }
 
 footer {
@@ -17,5 +50,9 @@ footer {
     bottom: 0;
     width: 100%;
     height: 50px;
+    padding-top: 30px;
   }
 
+  h1 {
+    padding-left: 25px;;
+}
