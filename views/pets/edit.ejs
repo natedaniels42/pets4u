@@ -57,7 +57,11 @@
             </select> <br/><br/>
 
 
-            Neutered: <input type="checkbox" name="neutered"/> <br/><br/>
+            Neutered: <input type="checkbox" name="neutered" 
+            <%if (pet.neutered === 'neutered') { %>
+                checked
+            <% } %> 
+            /> <br/><br/>
 
             Description: <textarea name="description"><%=pet.description%></textarea> <br/><br/>
       

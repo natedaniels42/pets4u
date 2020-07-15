@@ -100,7 +100,7 @@ router.post('/confirm', (req, res) => {
             from: 'pets4uapp42@gmail.com',
             to: createdAdoption.email,
             subject: 'Pet Adoption',
-            text: 'It works'
+            text: `Thank you for your interest in adopting ${createdAdoption.adoptPet}. Please fill out the attached file and return it to: pets4uapp42@gmail.com.  Once we have a chance to review your application we will contact you to set up an appointment to come to the shelter.` 
         };
 
         transporter.sendMail(mailOptions, (err, sentEmail) => {
