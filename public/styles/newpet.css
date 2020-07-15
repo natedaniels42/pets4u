@@ -1,3 +1,55 @@
 body {
     background: linear-gradient(white, aquamarine) !important;
 }
+
+nav {
+    float: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav > a {
+    padding: 10px;
+}
+
+form {
+    padding-left: 30px;
+    width: 65%;
+}
+
+form > button {
+    position: relative;
+    margin-top: 20px;
+    /* margin-left: 100px; */
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    margin-left: 80px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.category {
+    display: inline-block;
+    width: 100px;
+    padding-right: 150px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 30px;
+    font-family: 'Raleway', sans-serif;
+  }

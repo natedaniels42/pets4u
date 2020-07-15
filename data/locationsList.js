@@ -3,24 +3,24 @@ const db = require('../models');
 
 const locationsList = [
     {
-        state: 'Virginia',
-        city: [ 'Fairfax','Lorton','Fredricksburg']
+        state: 'Delaware',
+        city: ['Newark', 'Dover', 'Wilmington']
     },
     {
         state: 'Maryland',
         city: ['Baltimore', 'Annapolis', 'Frederick']
     },
     {
+        state: 'North Carolina',
+        city: ['Charlotte', 'Raleigh', 'Asheville']
+    },
+    {
         state: 'Pennsylvania',
         city: ['Philadephia', 'Pittsburgh', 'Scranton']
     },
     {
-        state: 'Delaware',
-        city: ['Newark', 'Dover', 'Wilmington']
-    },
-    {
-        state: 'North Carolina',
-        city: ['Charlotte', 'Raleigh', 'Asheville']
+        state: 'Virginia',
+        city: [ 'Fairfax','Lorton','Fredricksburg']
     }
 ];
   

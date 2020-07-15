@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/editpet.css"/>
     <script defer src="/js/app.js"></script>
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto:wght@400;700;900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+     <!-- CSS only  -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+    <!-- JS, Popper.js, and jQuery  -->
+     <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
     <title>Pets4U</title>
 </head>
 <body>
@@ -19,20 +28,23 @@
     </header>
 
     <main>
-        <h1>Edit Pet</h1>
-
-        <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
         
-            Name: <input type="text" name="name" value="<%=pet.name%>"/> <br/><br/>
-      
-            Pet Type: <input type="text" name="petType" value="<%=pet.petType%>"/> <br/><br/>
+        <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
 
-            Sex: <select name="sex" value="<%=pet.sex%>">
+            <h1>Edit <%=pet.name%></h1>
+
+            <img src="<%=pet.image%>"> <br/><br/>
+        
+            <span class="category">Name:</span> <span class="fields"><input type="text" name="name" value="<%=pet.name%>"/></span> <br/><br/>
+      
+            <span class="category">Pet Type:</span> <span class="fields"><input type="text" name="petType" value="<%=pet.petType%>"/></span> <br/><br/>
+
+            <span class="category">Sex:</span> <span class="fields"><select name="sex" value="<%=pet.sex%>">
                 <option>Male</option>
                 <option>Female</option>
-            </select> <br/><br/>
+            </select></span> <br/><br/>
       
-            Age: <select name="age.ageNumber" value="<%=pet.age.ageNumber%>">
+            <span class="category">Age:</span> <span class="fields"><select name="age.ageNumber" value="<%=pet.age.ageNumber%>">
                 <% for (let i = 1; i < 50; i++) { %>
                     <option><%=i%></option>
                 <% } %>
@@ -40,13 +52,13 @@
             <select name="age.ageLength" value="<%=pet.age.ageLength%>">
                 <option>months</option>
                 <option>years</option>
-            </select>
+            </select></span>
                 
              <br/><br/>
 
-            Breed/Species: <input type="text" name="breedSpecies" value="<%=pet.breedSpecies%>"/> <br/><br/>
+             <span class="category">Breed/Species:</span> <span class="fields"><input type="text" name="breedSpecies" value="<%=pet.breedSpecies%>"/></span> <br/><br/>
       
-            Location: <select name="location" value="<%=pet.location%>">
+            <span class="category">Location:</span> <span class="fields"><select name="location" value="<%=pet.location%>">
                 <% for (let i = 0; i < location.length; i++) { %>
                     <% for (let j = 0; j < location[i].city.length; j++) { %>
                     <option value="<%=`${location[i].city[j]}, ${location[i].state}`%>"><%=`${location[i].city[j]}, ${location[i].state}`%></option>
@@ -54,22 +66,23 @@
                     <% } %>
                 <% } %>
             
-            </select> <br/><br/>
+            </select></span> <br/><br/>
 
-
-            Neutered: <input type="checkbox" name="neutered" 
+            <span class="category">Neutered:</span> <span class="fields"><input type="checkbox" name="neutered" 
             <%if (pet.neutered === 'neutered') { %>
                 checked
             <% } %> 
-            /> <br/><br/>
+            /> </span><br/><br/>
 
-            Description: <textarea name="description"><%=pet.description%></textarea> <br/><br/>
+            <span class="category"> Description:</span> <span class="fields"><textarea name="description"><%=pet.description%></textarea></span> <br/><br/>
       
-            <button type="submit">Submit Change</button>
+            <button class="btn btn-primary btn-lg btn-block"  type="submit">Submit Change</button>
       
           </form>
 
     </main>
+
     <footer>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Ally Pittman & Nate Daniels </footer>
+
 </body>
 </html>
