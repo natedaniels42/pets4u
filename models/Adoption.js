@@ -10,6 +10,10 @@ const adoptionSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    adoptPet: {
+        type: String,
+        required: true
+    }
 });
 
 const Adoption = mongoose.model('Adoption', adoptionSchema);

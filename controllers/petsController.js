@@ -3,6 +3,17 @@ const router = express.Router();
 const db = require('../models');
 const multer = require('multer');
 const upload = multer({dest: '../public/images'});
+const nodemailer = require('nodemailer');
+require('dotenv').config();
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
+    }
+});
+
+
 /*
 const storage = multer.diskStorage({
     destination: '../public/images/', 
@@ -75,7 +86,21 @@ router.post('/confirm', (req, res) => {
         if (err) console.log(err);
                 
         console.log(req.body);
-        res.render('pets/confirm');
+        let mailOptions = {
+            from: 'pets4uapp42@gmail.com',
+            to: createdAdoption.email,
+            subject: 'Pet Adoption',
+            text: 'It works'
+        };
+
+        transporter.sendMail(mailOptions, (err, sentEmail) => {
+            if (err) console.log(err);
+
+            console.log(sentEmail);
+            res.render('pets/confirm', {
+                adoption: createdAdoption
+            })
+        });
     })
 })
 
