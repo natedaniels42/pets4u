@@ -4,7 +4,7 @@ const Location = require('./Location');
 const petSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
     },
     image: {
         type: String,
@@ -29,11 +29,11 @@ const petSchema = new mongoose.Schema({
     },
     petType: {
         type: String,
-        required: true
+        required: true, 
     },
     breedSpecies: {
             type: String,
-            required: true
+            required: true,
     },
     neutered: {
         type: String,
@@ -41,7 +41,7 @@ const petSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+        required: true,
     },
 });
 
