@@ -72,9 +72,12 @@ router.post('/', (req, res) => {
             if (err)console.log(err);
             
             console.log(req.file);
-            newPet.image = `images/${req.file.filename}`;
-            console.log(newPet);
-            res.redirect('/pets')
+            newPet.image = `/images/${req.file.filename}`;
+            newPet.save((err, savedPet)=> {
+
+                console.log(newPet);
+                res.redirect('/pets')
+            })
         })
     })
 })
