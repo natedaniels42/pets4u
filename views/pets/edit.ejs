@@ -68,10 +68,13 @@
             
             </select></span> <br/><br/>
 
+            <span class="category">Neutered:</span> <span class="fields"><input type="checkbox" name="neutered" 
+            <%if (pet.neutered === 'neutered') { %>
+                checked
+            <% } %> 
+            /> </span><br/><br/>
 
-            <span class="category">Neutered:</span> <span class="fields"><input type="checkbox" name="neutered"/></span> <br/><br/>
-
-            <span class="category">Description:</span> <span class="fields"><input type="text" name="description" value="<%=pet.description%>"/></span> <br/><br/>
+            <span class="category"> Description:</span> <span class="fields"><textarea name="description"><%=pet.description%></textarea></span> <br/><br/>
       
             <button class="btn btn-primary btn-lg btn-block"  type="submit">Submit Change</button>
       

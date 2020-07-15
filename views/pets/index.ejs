@@ -40,9 +40,10 @@
                         <a href="/pets/<%=pet[i]._id%>">
                             <span class="pet-name"><h4><img src="/images/137588392545fb5d22845c5ed4efad73.png"/><%=pet[i].name%></h4></span>
                         </a>
-                        <!--<a href="/locations"><%=//pet[i].location%></a>-->
                         <a href="/pets/<%=pet[i]._id%>"><img class="pet-image" src="<%= pet[i].image %>"></a>
+                        <p><%=pet[i].location%></p>
                     </li>
+
                 </div>
                     <% } %>
             <% } else { %>
