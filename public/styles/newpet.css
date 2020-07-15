@@ -15,12 +15,13 @@ nav > a {
 
 form {
     padding-left: 30px;
+    width: 65%;
 }
 
 form > button {
     position: relative;
     margin-top: 20px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     font-family: 'Raleway', sans-serif;
 }
 

@@ -29,14 +29,14 @@
         <h1>Adoption Page</h1>
 
         <div class="pet-adopt">
-            <h2><%=pet.name%></h2>
-            <img src="<%=pet.image%>">
             <form action="/pets/confirm" method="POST">
+                <h2><%=pet.name%></h2>
+                <img src="<%=pet.image%>"> <br/> <br/>
                 <label for="name">Name:</label>
                 <input type="text" name="name"/> <br/> <br/>
                 <label for="email">Email:</label>
                 <input type="text" name="email"/> <br/> <br/>
-                <button type="submit">Adopt</button>
+                <button class="btn btn-primary btn-lg btn-block"  type="submit">Adopt</button>
             </form>
     </div>
     </main>

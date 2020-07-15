@@ -36,6 +36,11 @@ img {
     padding-bottom: 25px;
 }
 
+form {
+    padding-left: 30px;
+    width: 65%;
+}
+
 form > label {
     display: inline-block;
     padding-right: 20px;
@@ -48,7 +53,7 @@ form > input {
 }
 
 form > button {
-    margin-left: 125px;
+    /* margin-left: 125px; */
     font-family: 'Raleway', sans-serif;
     margin-top: 10px;
 }
