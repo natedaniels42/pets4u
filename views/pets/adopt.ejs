@@ -30,14 +30,13 @@
 
         <div class="pet-adopt">
             <form action="/pets/confirm" method="POST">
+                <h2><%=pet.name%></h2>
                 <img src="<%=pet.image%>"> <br/> <br/>
                 <label for="name">Name:</label>
                 <input type="text" name="name"/> <br/> <br/>
                 <label for="email">Email:</label>
                 <input type="text" name="email"/> <br/> <br/>
-                <select name="adoptPet">
-                    <option value="<%=pet.name%>"><%=pet.name%></option>    
-                </select>   
+                <input type="hidden" name="adoptPet" value="<%=pet.name%>"/>
                 <button class="btn btn-primary btn-lg btn-block"  type="submit">Adopt</button>
             </form>
     </div>
