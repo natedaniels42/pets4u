@@ -71,8 +71,13 @@ router.post('/', (req, res) => {
         db.Pet.create(req.body, (err, newPet) => {
             if (err)console.log(err);
             
-            console.log(req.file);
-            newPet.image = `/images/${req.file.filename}`;
+            //console.log(req.file);
+            if (req.file) {
+                newPet.image = `/images/${req.file.filename}`;
+
+            } else {
+                newPet.image = 'https://i.ebayimg.com/images/g/nkQAAOSw84ZcTbvu/s-l300.png';
+            }
             newPet.save((err, savedPet)=> {
 
                 console.log(newPet);
