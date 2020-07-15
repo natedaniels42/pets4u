@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/locationsindex.css"/>
     <title>Pets4U</title>
 </head>
 <body>
@@ -21,8 +22,6 @@
 
         <section class='locations-list'> 
             
-            
-            
          <% for (let i = 0; i < locations.length; i++) { %>
             <ul><%= locations[i].state %> 
 
@@ -36,6 +35,8 @@
         <% } %>
         </section>
     </main>
+
     <footer>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Ally Pittman & Nate Daniels </footer>
+
 </body>
 </html>
