@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const multer = require('multer');
-const upload = multer({dest: '../public/images'});
+const path = require('path');
+//const upload = multer({dest: '../public/images'});
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+
+
+
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -14,10 +18,12 @@ const transporter = nodemailer.createTransport({
 });
 
 
-/*
+
 const storage = multer.diskStorage({
-    destination: '../public/images/', 
-    
+    destination: 'public/images', 
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
 })
 
 const upload = multer({
@@ -26,20 +32,20 @@ const upload = multer({
     fileFilter: function (req, file, cb) {
         checkFileType(file, cb);
     }
-}).single('myImage');
+}).single('image');
 
 function checkFileType(file, cb) {
     const filetypes = /jpeg|jpg|png|gif/;
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = filetypes.test(file.mimetype);
 
-    if (mimtype && extname) {
+    if (mimetype && extname) {
         return cb(null, true);
     } else {
         cb('Error: Images Only!');
     }
 }
-*/
+
 
 router.get('/new', (req, res) => {
     db.Location.find({}, (err, allLocations) => {
@@ -52,22 +58,26 @@ router.get('/new', (req, res) => {
     })
 });
 
-router.post('/', upload.single('image'), (req, res) => {
-    if (req.body.neutered === 'on') {
-        req.body.neutered = 'neutered';
-    } else {
-        req.body.neutered = 'not neutered';
-    }
-    console.log(req.body);
-    console.log(req.file);
-    db.Pet.create(req.body, (err, newPet) => {
-        if (err)console.log(err);
+router.post('/', (req, res) => {
+    upload(req, res, (err) => {
+        if (err) console.log(err);
+        
+        if (req.body.neutered === 'on') {
+            req.body.neutered = 'neutered';
+        } else {
+            req.body.neutered = 'not neutered';
+        }
+       
+        db.Pet.create(req.body, (err, newPet) => {
+            if (err)console.log(err);
             
-        newPet.image = req.file.path;
-        console.log(newPet);
-        res.redirect('/pets')
+            console.log(req.file);
+            newPet.image = req.file.path;
+            console.log(newPet);
+            res.redirect('/pets')
         })
     })
+})
 
 
     
