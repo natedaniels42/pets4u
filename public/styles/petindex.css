@@ -15,9 +15,13 @@ nav > a {
 
 h1 {
     padding-left: 30px;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 15px;
     font-family: 'Raleway', sans-serif;
+}
+
+h4 > img {
+    padding-bottom: 8px;
 }
 
 .pet-name{
@@ -48,4 +52,5 @@ footer {
     width: 100%;
     height: 50px;
     padding-top: 30px;
+    font-family: 'Raleway', sans-serif;
   }

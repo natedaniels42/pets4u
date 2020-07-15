@@ -41,7 +41,7 @@
                     <div class="pet-listing">
                     <li> 
                         <a href="/pets/<%=pet[i]._id%>"><%=pet[i].name%></a> <br/>
-                        <img class="pet-image" src="<%= pet[i].image %>">
+                        <a href="/pets/<%=pet[i]._id%>"><img class="pet-image" src="<%= pet[i].image %>"></a>
                     </li>
                     </div>
                     <% } %> 

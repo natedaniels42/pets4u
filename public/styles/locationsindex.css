@@ -16,15 +16,29 @@ nav > a {
 }
 
 h1 {
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 15px;
     font-family: 'Raleway', sans-serif;
+    padding-left: 25px;
 }
 
 .state {
     font-size: 25px;
     text-decoration: underline;
     font-family: 'Raleway', sans-serif;
+}
+
+.state > img {
+    padding-bottom: 5px;
+}
+
+li {
+    list-style: inside;
+    padding-left: 30px;
+}
+
+h1 > img {
+    padding-bottom: 5px;
 }
 
 .city {
@@ -37,8 +51,5 @@ footer {
     width: 100%;
     height: 50px;
     padding-top: 30px;
-    }
-
-    h1 {
-        padding-left: 25px;;
-    }
+    font-family: 'Raleway', sans-serif;
+}

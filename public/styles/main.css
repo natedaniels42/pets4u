@@ -2,67 +2,60 @@ body {
     background: linear-gradient(white, aquamarine) !important;
 }
 
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-  }
+main {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
 
-  main {
-      text-align: center;
-      width: 80%;
-      margin: 0 auto;
-  }
-
-  .carousel {
+.carousel {
     max-width: 970px;
     margin: 0 auto !important;
 }
 
-  .card {
-      display: inline-block !important;
-      margin-right: 45px;
-      margin-top: 30px;
-  }
+.card {
+    display: inline-block !important;
+    margin-right: 45px;
+    margin-top: 30px;
+}
 
-  #locations-image {
+#locations-image {
     height: 185.5px;
     width: 200px;
     padding-top: 13px;
-  }
+}
 
-  #newpetimage {
+#newpetimage {
     height: 185.5px;
     width: 100%;
     padding-top: 13px;
     padding-left: 13px;
     padding-right: 13px;
-  }
+}
 
-  .card-body {
+.card-body {
       padding-top: 7px !important;
       padding-bottom: 7px !important;
-  }
+}
 
-  .card-text {
+.card-text {
     padding-bottom: 7px !important;
-  }
+}
 
-  h6 {
+h6 {
     padding-top: 30px;
     padding-bottom: 0px;
     margin-bottom: 0px !important;
-  }
+}
 
-  h1 {
+h1 {
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 76px !important;
-  }
+}
 
-  footer, h3 {
+footer, h3 {
       padding-top: 30px;
-  }
+ }
 
 footer, p, h6, .btn {
     font-family: 'Raleway', sans-serif;
@@ -72,6 +65,15 @@ h5, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
-  p {
-      padding-bottom: 30px;
-  }
+p {
+    padding-bottom: 30px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 30px;
+    font-family: 'Raleway', sans-serif;
+}
