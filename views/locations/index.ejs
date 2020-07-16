@@ -31,20 +31,23 @@
     <main>
         <h1>Locations</h1>
 
-        <section class='locations-list'> 
-            
-         <% for (let i = 0; i < locations.length; i++) { %>
-           <ul><span class="state"><img src="/images/137588392545fb5d22845c5ed4efad73.png"/><%= locations[i].state %> </span> 
+        <section class='locations-list container'> 
+            <div class="row">
+                <div class="col-sm">
+                    <% for (let i = 0; i < locations.length; i++) { %>
+                    <ul><span class="state"><img src="/images/137588392545fb5d22845c5ed4efad73.png"/><%= locations[i].state %> </span> 
 
-                <% for (let j = 0; j < (locations[i].city).length; j++) { %>
+                    <% for (let j = 0; j < (locations[i].city).length; j++) { %>
 
-                <li><span class="city"><a href="locations/<%= locations[i].city[j] %>"> <%= locations[i].city[j] %> </a></span></li>
-
+                    <li><span class="city"><a href="locations/<%= locations[i].city[j] %>"> <%= locations[i].city[j] %> </a></span></li>
+                    <% } %>
+                </ul>
                 <% } %>
-
-            </ul>
-        <% } %>
-        <img class="map" src="/images/petplaces.jpg"/>
+            </div>
+            <div class="col-sm"> 
+                <img class="map" src="/images/petplaces.jpg"/>
+            </div>
+        </div>
         </section>
     </main>
 
