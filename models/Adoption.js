@@ -11,8 +11,14 @@ const adoptionSchema = new mongoose.Schema({
         required: true
     },
     adoptPet: {
-        type: String,
-        required: true
+        name: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        }
     }
 });
 

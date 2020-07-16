@@ -36,7 +36,8 @@
                 <input type="text" name="name" required/> <br/> <br/>
                 <label for="email">Email:</label>
                 <input type="text" name="email" required/> <br/> <br/>
-                <input type="hidden" name="adoptPet" value="<%=pet.name%>"/>
+                <input type="hidden" name="adoptPet.name" value="<%=pet.name%>"/>
+                <input type="hidden" name="adoptPet.image" value="<%=pet.image%>"/>
                 <button class="btn btn-primary btn-lg btn-block"  type="submit">Adopt</button>
             </form>
     </div>
