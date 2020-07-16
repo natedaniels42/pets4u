@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../models');
 const multer = require('multer');
 const path = require('path');
-//const upload = multer({dest: '../public/images'});
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -75,7 +74,6 @@ router.post('/', (req, res) => {
         db.Pet.create(req.body, (err, newPet) => {
             if (err)console.log(err);
             
-            //console.log(req.file);
             if (req.file) {
                 newPet.image = `/images/${req.file.filename}`;
 
@@ -84,7 +82,6 @@ router.post('/', (req, res) => {
             }
             newPet.save((err, savedPet)=> {
 
-                console.log(newPet);
                 res.redirect('/pets')
             })
         })
@@ -118,7 +115,6 @@ router.post('/confirm', (req, res) => {
         transporter.sendMail(mailOptions, (err, sentEmail) => {
             if (err) console.log(err);
 
-            console.log(sentEmail);
             res.render('pets/confirm', {
                 adoption: createdAdoption
             })
@@ -141,7 +137,6 @@ router.get('/:id', (req, res) => {
 router.get('/:id/adopt', (req, res) => {
     db.Pet.findById(req.params.id, (err, foundPet) => {
         if (err) console.log(err);
-
 
         res.render('pets/adopt', {
             pet: foundPet,
@@ -178,8 +173,6 @@ router.put('/:id', (req, res) => {
     db.Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatedPet) => {
         if (err) console.log(err);
 
-        console.log(req.params.id);
-        console.log(updatedPet);
         res.redirect('/pets/' + req.params.id);
     })
 })
