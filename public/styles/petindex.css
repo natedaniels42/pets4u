@@ -26,6 +26,7 @@ h4 > img {
 
 .pet-name{
     font-family: 'Roboto', sans-serif;
+
 }
 
 .pet-image {
@@ -33,17 +34,25 @@ h4 > img {
     height: 100%;
 }
 
+.pet-image-hide {
+    overflow: hidden;
+    height: 70%;
+}
+
 .pet-listing {
     display: inline-block;
     position: relative;
     width: 50vh;
     height: 50vh;
-    overflow: hidden;
+    /* overflow: hidden; */
+    margin-top: 10px;
 }
 
 li {
     position: absolute;
     padding: 15px;
+    list-style: none;
+    height: 100%;
 }
 
 footer {
@@ -52,5 +61,6 @@ footer {
     width: 100%;
     height: 50px;
     padding-top: 30px;
+    margin-top: 70px;
     font-family: 'Raleway', sans-serif;
   }
