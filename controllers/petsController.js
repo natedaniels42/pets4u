@@ -45,6 +45,7 @@ function checkFileType(file, cb) {
 
 
 router.get('/new', (req, res) => {
+    let warning = '';
     if (!req.session.currentUser) return res.redirect('/login');
     db.Location.find({}, (err, allLocations) => {
         if (err) console.log(err);
@@ -62,9 +63,9 @@ router.post('/', (req, res) => {
         if (err) console.log(err);
         
         if (req.body.neutered === 'on') {
-            req.body.neutered = 'neutered';
+            req.body.neutered = true;
         } else {
-            req.body.neutered = 'not neutered';
+            req.body.neutered = false;
         }
        
         db.Pet.create(req.body, (err, newPet) => {
@@ -105,7 +106,7 @@ router.post('/confirm', (req, res) => {
             from: 'pets4uapp42@gmail.com',
             to: createdAdoption.email,
             subject: 'Pet Adoption',
-            text: `Thank you for your interest in adopting ${createdAdoption.adoptPet}. Please fill out the attached file and return it to: pets4uapp42@gmail.com.  Once we have a chance to review your application we will contact you to set up an appointment to come to the shelter.` 
+            text: `Thank you for your interest in adopting ${createdAdoption.adoptPet.name}. Please fill out the attached file and return it to: pets4uapp42@gmail.com.  Once we have a chance to review your application we will contact you to set up an appointment to come to the shelter.` 
         };
 
         transporter.sendMail(mailOptions, (err, sentEmail) => {
@@ -159,9 +160,9 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
     if (!req.session.currentUser) return res.redirect('/login');
     if (req.body.neutered === 'on') {
-        req.body.neutered = 'neutered';
+        req.body.neutered = true;
     } else {
-        req.body.neutered = 'not neutered';
+        req.body.neutered = false;
     }
     console.log(req.body);
     db.Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatedPet) => {

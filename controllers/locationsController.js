@@ -8,7 +8,7 @@ router.get('/:id', (req, res) => {
         
         db.Pet.find({location: `${req.params.id}, ${foundLocation.state}`}, (err, foundPets) => {
             if (err) console.log(err);
-            
+       
             if(foundPets.length) {
                 foundLocation.pets.splice(0, foundLocation.pets.length);
                 for (let i = 0; i < foundPets.length; i++) {
