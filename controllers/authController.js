@@ -12,11 +12,12 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+    console.log(req.body);
     db.User.findOne({email: req.body.email}, (err, foundUser) => {
-        if (err) return console.log(err);
+        if (err) console.log(err);
 
         if (!foundUser) {
-            res.render('register');
+            return res.redirect('login');
         }
 
         bcrypt.compare(req.body.password, foundUser.password, (err, isMatch) => {
@@ -33,7 +34,7 @@ router.post('/login', (req, res) => {
                 req.session.currentUser = currentUser;
                 res.redirect('/');
             } else {
-                res.send('invalid info');
+                res.send('Invalid info');
             }
         })
     })

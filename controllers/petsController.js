@@ -190,7 +190,7 @@ router.delete('/:id', (req, res) => {
     db.Pet.findByIdAndDelete(req.params.id, (err, deletedPet) => {
         if (err) console.log(err);
 
-        res.redirect('/pet')
+        res.redirect('/pets')
     })
 })
 
