@@ -60,10 +60,11 @@ form > button {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 50px;
     padding-top: 30px;
+    margin-top: 200px;
     font-family: 'Raleway', sans-serif;
 }
