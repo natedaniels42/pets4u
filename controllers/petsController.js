@@ -67,9 +67,9 @@ router.post('/', (req, res) => {
         if (err) console.log(err);
         
         if (req.body.neutered === 'on') {
-            req.body.neutered = 'neutered';
+            req.body.neutered = true;
         } else {
-            req.body.neutered = 'not neutered';
+            req.body.neutered = false;
         }
        
         db.Pet.create(req.body, (err, newPet) => {
@@ -170,9 +170,9 @@ router.put('/:id', (req, res) => {
     if (!req.session.currentUser) return res.redirect('/login');
 
     if (req.body.neutered === 'on') {
-        req.body.neutered = 'neutered';
+        req.body.neutered = true;
     } else {
-        req.body.neutered = 'not neutered';
+        req.body.neutered = false;
     }
     console.log(req.body);
     db.Pet.findByIdAndUpdate(req.params.id, req.body, (err, updatedPet) => {

@@ -36,7 +36,7 @@ const petSchema = new mongoose.Schema({
             required: true,
     },
     neutered: {
-        type: String,
+        type: Boolean,
         required: true
     },
     description: {
