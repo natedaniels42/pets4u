@@ -26,7 +26,7 @@ If the user chooses the custom search option on the home page or the nav bar the
 
 ## Wireframes
 ### Home Page
-![](public/images/read-me-images/Home Page - Project 2.jpeg)
+![](public/images/read-me-images/Home-Page.jpeg)
 
 ### Pet Index
 ![](public/images/read-me-images/All Pets Index - Project 2.jpeg)
@@ -66,6 +66,7 @@ If the user chooses the custom search option on the home page or the nav bar the
 ## Interesting Code
 
 ### Post Route with image upload, authentication check, and checkbox value conditional
+
 router.post('/', (req, res) => {
     if (!req.session.currentUser) return res.redirect('/login');
     
