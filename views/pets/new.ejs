@@ -32,11 +32,20 @@
 
          <form action="/pets" method="POST" enctype="multipart/form-data"> 
 
+<<<<<<< HEAD
             <span class="category">Name:</span> <input type="text" name="name" required/> <br/><br/>
             
             <span class="category">Image:</span> <input type="file" name="image" /> <br/><br/>
       
              <span class="category">Pet Type:</span> <input type="text" name="petType" required/> <br/><br/>
+=======
+            
+            <span class="category">Name:</span> <input type="text" name="name" placeholder="Buddy" required/> <br/><br/>
+            
+            <span class="category">Image:</span> <input type="file" name="image" /> <br/><br/>
+            
+             <span class="category">Pet Type:</span> <input type="text" name="petType" placeholder="not specified" required/> <br/><br/>
+>>>>>>> submaster
 
              <span class="category">Sex:</span> <select name="sex">
                 <option value="male">Male</option>
@@ -55,7 +64,7 @@
                 
              <br/><br/>
 
-             <span class="category">Breed/Species:</span> <span><input type="text" name="breedSpecies" required/></span> <br/><br/>
+             <span class="category">Breed/Species:</span> <span><input type="text" name="breedSpecies" placeholder="not specified" required/></span> <br/><br/>
       
              <span class="category">Location:</span> <span><select name="location">
                 <% for (let i = 0; i < location.length; i++) { %>
@@ -69,7 +78,7 @@
 
             <span class="category">Neutered:</span> <span><input type="checkbox" name="neutered" /></span> <br/><br/>
 
-            <span class="category">Description:</span> <span><textarea name="description" required></textarea></span> <br/><br/>
+            <span class="category">Description:</span> <span><textarea name="description" placeholder="no description yet" required></textarea></span> <br/><br/>
       
             <button class="btn btn-primary btn-lg btn-block" id="add-button" type="submit">Add Pet</button>
       

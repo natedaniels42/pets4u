@@ -4,9 +4,12 @@ const PORT = process.env.PORT || 5000;
 const methodOverride = require('method-override');
 const locationsController = require('./controllers/locationsController');
 const petsController = require('./controllers/petsController');
+const authController = require('./controllers/authController');
 const multer = require('multer');
 //const upload = multer({dest: './public/images'});
 const path = require('path');
+const session = require('express-session');
+require('dotenv').config();
 
 const storage = multer.diskStorage({
     destination: './public/images/', 
@@ -38,6 +41,15 @@ function checkFileType(file, cb) {
 
 app.set('view engine', 'ejs');
 
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,//do you want to resave each request
+    saveUninitialized: false,
+    cookie: { //how long to stay logged on
+        maxAge: 1000 * 60 * 60 * 24 * 7 * 2//2 weeks
+    }
+}))
+
 app.use(methodOverride('_method'));
 
 app.use(express.static(`${__dirname}/public`));
@@ -46,7 +58,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.use('/locations', locationsController);
 app.use('/pets', petsController);
-
+app.use('/', authController);
 
 //Routes--------------------
 
