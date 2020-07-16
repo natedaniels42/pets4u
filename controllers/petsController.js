@@ -48,6 +48,8 @@ function checkFileType(file, cb) {
 
 
 router.get('/new', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+
     db.Location.find({}, (err, allLocations) => {
         if (err) console.log(err);
 
@@ -59,6 +61,8 @@ router.get('/new', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+    
     upload(req, res, (err) => {
         if (err) console.log(err);
         
@@ -146,6 +150,8 @@ router.get('/:id/adopt', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+
     db.Location.find({}, (err, allLocations) => {
         if (err) console.log(err);
 
@@ -161,6 +167,8 @@ router.get('/:id/edit', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+
     if (req.body.neutered === 'on') {
         req.body.neutered = 'neutered';
     } else {
@@ -177,11 +185,14 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+    
     db.Pet.findByIdAndDelete(req.params.id, (err, deletedPet) => {
         if (err) console.log(err);
 
-        res.redirect('/pets');
+        res.redirect('/pets')
     })
 })
+
 
 module.exports = router;
