@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/login.css"/>
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto:wght@400;700;900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
 <body>
     <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-        </ul>
+        <a href="/">Home</a>
     </nav>
+
     <main>
-        <h2>Login</h2>
+
+        <h2><img src="/images/137588392545fb5d22845c5ed4efad73.png"/> Login</h2>
 
         <form action="/login" method="POST">
             <div class="form-group">
-                <label for="email">Email</label>
+                <span class="category"><label for="email">Email</label></span>
                 <input type="email" name="email" required/>
-            </div>
+            </div> <br/>
             <div class="form-group">
-                <label for="password">Password</label>
+                <span class="category"><label for="password">Password</label></span>
                 <input type="password" name="password" required/>
-            </div>
+            </div> <br/>
             <button type="submit">Submit</button>
         </form>
     </main>
+
 </body>
 </html>

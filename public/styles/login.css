@@ -1,0 +1,13 @@
+.category {
+    display: inline-block;
+    width: 10px;
+    padding-right: 100px;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: underline;
+}
+
+h2 img {
+    position: relative;
+    bottom: 0;
+    padding-bottom: 0px;
+}
