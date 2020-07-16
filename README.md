@@ -32,7 +32,7 @@ If the user chooses the custom search option on the home page or the nav bar the
 ![](public/images/read-me-images/All-Pets-Index.jpeg)
 
 ### Pet Show Page
-![](public/images/read-me-images/Single Pet-Show-Page.jpeg)
+![](public/images/read-me-images/Single-Pet-Show-Page.jpeg)
 
 ### New Pet Page
 ![](public/images/read-me-images/New-Pet.jpeg)
@@ -41,7 +41,7 @@ If the user chooses the custom search option on the home page or the nav bar the
 ![](public/images/read-me-images/Edit-Pet.jpeg)
 
 ### Adopt Page
-![](public/images/read-me-images/Post-Click Adoption-Application.jpeg)
+![](public/images/read-me-images/Post-Click-Adoption-Application.jpeg)
 
 ### Confirm Page
 ![](public/images/read-me-images/Adopt-confirm.jpeg)
@@ -67,34 +67,34 @@ If the user chooses the custom search option on the home page or the nav bar the
 
 ### Post Route with image upload, authentication check, and checkbox value conditional
 
-  router.post('/', (req, res) => {
-     if (!req.session.currentUser) return res.redirect('/login');
-    
-     upload(req, res, (err) => {
-         if (err) console.log(err);
-       
+    router.post('/', (req, res) => {
+        if (!req.session.currentUser) return res.redirect('/login');
+
+        upload(req, res, (err) => {
+            if (err) console.log(err);
+        
         if (req.body.neutered === 'on') {
-             req.body.neutered = true;
-         } else {
-             req.body.neutered = false;
-         }
-      
-         db.Pet.create(req.body, (err, newPet) => {
-             if (err)console.log(err);
-           
-             if (req.file) {
-                 newPet.image = `/images/${req.file.filename}`;
+                req.body.neutered = true;
+            } else {
+                req.body.neutered = false;
+            }
+        
+            db.Pet.create(req.body, (err, newPet) => {
+                if (err)console.log(err);
+            
+                if (req.file) {
+                    newPet.image = `/images/${req.file.filename}`;
 
-             } else {                
-                 newPet.image = 'https://i.ebayimg.com/images/g/nkQAAOSw84ZcTbvu/s-l300.png';
-             }
-             newPet.save((err, savedPet)=> {
+                } else {                
+                    newPet.image = 'https://i.ebayimg.com/images/g/nkQAAOSw84ZcTbvu/s-l300.png';
+                }
+                newPet.save((err, savedPet)=> {
 
-                 res.redirect('/pets')
-             })
-         })
-     })
- })
+                    res.redirect('/pets')
+                })
+            })
+        })
+    })
 
 
 ## Dependencies Installed
