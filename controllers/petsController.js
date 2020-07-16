@@ -45,6 +45,7 @@ function checkFileType(file, cb) {
 
 
 router.get('/new', (req, res) => {
+    let warning = '';
     if (!req.session.currentUser) return res.redirect('/login');
     db.Location.find({}, (err, allLocations) => {
         if (err) console.log(err);

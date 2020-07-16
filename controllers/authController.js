@@ -17,7 +17,7 @@ router.post('/login', (req, res) => {
         if (err) console.log(err);
 
         if (!foundUser) {
-            return res.redirect('login');
+            return res.render('login');
         }
 
         bcrypt.compare(req.body.password, foundUser.password, (err, isMatch) => {
