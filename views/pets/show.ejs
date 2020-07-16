@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/petshow.css"/>
+    <script defer src="/js/app.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto:wght@400;700;900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <!-- CSS only  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+   <!-- JS, Popper.js, and jQuery  -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ae6121708a.js" crossorigin="anonymous"></script>
+    <title>Pets4U</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/pets">Available Pets</a>
+            <a href="/locations">Search By Location</a>
+            <a href="/pets/new">New Pet</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="pet-info">
+        
+            <h1>Pet Profile</h1>
+            <h2><%=pet.name%></h2>
+            <img class="pet-image" src="<%=pet.image%>">
+            <p><span class="category">Age: </span> <%=`${pet.age.ageNumber} ${pet.age.ageLength}`%></p>
+            <p><span class="category">Sex: </span> <span class="pet-text"><%=pet.sex%></span></p>
+            <p><span class="category">Pet Type: </span><%=pet.petType%></p>
+            <p><span class="category">Breed/Species: </span><%=pet.breedSpecies%></p>
+            <p><span class="category">Location: </span><%=pet.location%></p>
+            <p><span class="category">Neutered: </span><%=pet.neutered%></p>
+            <p><span class="category">Description: </span><%=pet.description%></p>
+
+        </div>
+
+        <div class="adopt-butt">
+        <form action="/pets/<%=pet._id%>/adopt" method="GET">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Adopt</button>
+        </form>
+    </div>
+        <hr/><br/><br/>
+
+        <div class="edit-delete"> 
+        <a href="/pets/<%=pet._id%>/edit">Edit</a>
+
+        <span class="delete-butt">
+            <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+       </span>
+    </div>
+
+    </main>
+
+    <footer><div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> Ally Pittman & Nate Daniels </div>
+        <div class="social">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://wwww.instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      </div>
+ 
+    </footer>
+
+</body>
+</html>

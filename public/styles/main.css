@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(white, aquamarine) !important;
+}
+
+main {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel {
+    max-width: 970px;
+    margin: 0 auto !important;
+}
+
+.card {
+    display: inline-block !important;
+    margin-right: 45px;
+    margin-top: 30px;
+}
+
+#locations-image {
+    height: 185.5px;
+    width: 200px;
+    padding-top: 13px;
+}
+
+#newpetimage {
+    height: 185.5px;
+    width: 100%;
+    padding-top: 13px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.card-body {
+      padding-top: 7px !important;
+      padding-bottom: 7px !important;
+}
+
+.card-text {
+    padding-bottom: 7px !important;
+}
+
+h6 {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0px !important;
+}
+
+h1 {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 76px !important;
+}
+
+footer, h3 {
+      padding-top: 30px;
+ }
+
+footer, p, h6, .btn {
+    font-family: 'Raleway', sans-serif;
+}
+
+h5, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    padding-bottom: 30px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding-top: 30px;
+    margin-top: 70px;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer i {
+    padding-right: 10px;
+}
+
+.fa-facebook:before, .fa-instagram:before, .fa-twitter:before {
+    font-size: 30px;
+    width: 15px;
+    margin-bottom: 10px;
+}
+
+.social {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    /* float: right; */
+    right: 0;
+    padding-right: 20px;
+}
+
+.copyright {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+}

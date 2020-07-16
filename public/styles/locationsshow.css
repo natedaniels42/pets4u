@@ -1,0 +1,85 @@
+body {
+    background: linear-gradient(white, aquamarine) !important;
+    background-repeat: no-repeat;
+}
+
+nav {
+    float: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav > a {
+    padding: 10px;
+}
+
+h1 {
+    padding-left: 30px;
+    padding-top: 70px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+li > a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+}
+
+.pet-image {
+    width: 100%;
+    height: 100%;
+}
+
+.pet-listing {
+    display: inline-block;
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    overflow: hidden;
+}
+
+li {
+    position: absolute;
+    padding: 15px;
+}
+
+  h1 {
+    padding-left: 25px;;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding-top: 30px;
+    margin-top: 800px;
+    font-family: 'Raleway', sans-serif;
+}
+
+footer i {
+    padding-right: 10px;
+}
+
+.fa-facebook:before, .fa-instagram:before, .fa-twitter:before {
+    font-size: 30px;
+    width: 15px;
+    margin-bottom: 10px;
+}
+
+.social {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    /* float: right; */
+    right: 0;
+    padding-right: 20px;
+}
+
+.copyright {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+}
