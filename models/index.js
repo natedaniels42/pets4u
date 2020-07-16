@@ -13,5 +13,6 @@ mongoose.connect(connectionString, {
 module.exports = {
     Pet: require('./Pet'),
     Location: require('./Location'),
-    Adoption: require('./Adoption')
+    Adoption: require('./Adoption'),
+    User: require('./User'),
 };
