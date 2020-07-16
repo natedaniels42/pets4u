@@ -79,11 +79,24 @@ footer {
     font-family: 'Raleway', sans-serif;
 }
 
+footer i {
+    padding-right: 10px;
+}
+
+.fa-facebook:before, .fa-instagram:before, .fa-twitter:before {
+    font-size: 30px;
+    width: 15px;
+    margin-bottom: 10px;
+}
+
 .social {
     display: inline-block;
-    position: relative;
+    position: absolute;
     bottom: 0;
-    float: right;
+    padding-bottom: 10px;
+    /* float: right; */
+    right: 0;
+    padding-right: 20px;
 }
 
 .copyright {
