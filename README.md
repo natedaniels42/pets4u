@@ -25,8 +25,34 @@ If the user clicks on new pet they can add a pet to the database.  They will be 
 If the user chooses the custom search option on the home page or the nav bar they will be taken to a page where they can choose specific criteria to limit their search.  Once they submit their search they will be taken to an index page with only animals that fit the specific criteria.
 
 ## Wireframes
+### Home Page
+![](public/images/read-me-images/Home Page - Project 2.jpeg)
+
+### Pet Index
+![](public/images/read-me-images/All Pets Index - Project 2.jpeg)
+
+### Pet Show Page
+![](public/images/read-me-images/Single Pet Show Page - Project 2.jpeg)
+
+### New Pet Page
+![](public/images/read-me-images/New Pet.jpeg)
+
+### Edit Pet Page
+![](public/images/read-me-images/Edit Pet.jpeg)
+
+### Adopt Page
+![](public/images/read-me-images/Post-Click Adoption Application - Project 2.jpeg)
+
+### Confirm Page
+![](public/images/read-me-images/Blank Diagram.jpeg)
+
+### All Cities Search Page
+![](public/images/read-me-images/Cities Page copy.jpg)
+
+
 
 ## ERD
+![](public/images/read-me-images/ERD Project 2.jpeg)
 
 ## Milestones
 ### Day 1 (7/9) Project Planning
@@ -40,34 +66,34 @@ If the user chooses the custom search option on the home page or the nav bar the
 ## Interesting Code
 
 ### Post Route with image upload, authentication check, and checkbox value conditional
-### router.post('/', (req, res) => {
-###     if (!req.session.currentUser) return res.redirect('/login');
-###    
-###     upload(req, res, (err) => {
-###         if (err) console.log(err);
-###        
-###         if (req.body.neutered === 'on') {
-###             req.body.neutered = true;
-###         } else {
-###             req.body.neutered = false;
-###         }
-###       
-###         db.Pet.create(req.body, (err, newPet) => {
-###             if (err)console.log(err);
-###            
-###             if (req.file) {
-###                 newPet.image = `/images/${req.file.filename}`;
-### 
-###             } else {
-###                 newPet.image = 'https://i.ebayimg.com/images/g/nkQAAOSw84ZcTbvu/s-l300.png';
-###             }
-###             newPet.save((err, savedPet)=> {
-### 
-###                 res.redirect('/pets')
-###             })
-###         })
-###     })
-### })
+router.post('/', (req, res) => {
+    if (!req.session.currentUser) return res.redirect('/login');
+    
+    upload(req, res, (err) => {
+        if (err) console.log(err);
+       
+        if (req.body.neutered === 'on') {
+            req.body.neutered = true;
+        } else {
+            req.body.neutered = false;
+        }
+      
+        db.Pet.create(req.body, (err, newPet) => {
+            if (err)console.log(err);
+           
+            if (req.file) {
+                newPet.image = `/images/${req.file.filename}`;
+
+            } else {                
+                newPet.image = 'https://i.ebayimg.com/images/g/nkQAAOSw84ZcTbvu/s-l300.png';
+            }
+            newPet.save((err, savedPet)=> {
+
+                res.redirect('/pets')
+            })
+        })
+    })
+})
 
 
 ## Dependencies Installed
