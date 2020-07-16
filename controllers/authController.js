@@ -41,13 +41,11 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-    
-    //Check for existing user
     db.User.findOne({email: req.body.email}, (err, foundUser) => {
         if(err) return console.log(err);
-        //User exists
+        
         if (foundUser) return console.log('User already exists');
-        //Turn text password into safer hash
+        
         bcrypt.genSalt(10, (err, salt) => {
             if (err) return console.log(err);
             
@@ -59,7 +57,7 @@ router.post('/register', (req, res) => {
                 const newUser = {
                     name,
                     email,
-                    password: hash, //Very Important!!!!
+                    password: hash,
                 };
                         
                 db.User.create(newUser, (err, createdUser) => {
