@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost:27017/pets4us';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pets4us';
 
-mongoose.connect(connectionString, {
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
