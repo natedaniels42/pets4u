@@ -42,8 +42,8 @@ app.set('view engine', 'ejs');
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
         maxAge: 1000 * 60
     }
