@@ -90,3 +90,7 @@ footer i {
     position: absolute;
     bottom: 0;
 }
+
+.pet-image {
+    object-fit: contain;
+}
