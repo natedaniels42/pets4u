@@ -92,5 +92,5 @@ footer i {
 }
 
 .pet-image {
-    object-fit: contain;
+    object-fit: cover;
 }
