@@ -8,9 +8,31 @@ main {
     margin: 0 auto;
 }
 
+nav {
+    position: relative;
+    float: right;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav > a {
+    padding: 10px;
+    z-index: 10;
+}
+
+.nav-item {
+    padding: 15px;
+    list-style: none;
+    height: 100%;
+    display: inline;
+}
+
 .carousel {
+    position: relative;
+    max-height: 300px;
     max-width: 970px;
-    margin: 0 auto !important;
+    margin: 0 auto;
 }
 
 .card {
