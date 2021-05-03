@@ -10,6 +10,7 @@ const path = require('path');
 const session = require('express-session');
 require('dotenv').config();
 
+//Storage for Multer image upload
 const storage = multer.diskStorage({
     destination: './public/images/', 
     filename: (req, file, cb) => {
@@ -17,6 +18,7 @@ const storage = multer.diskStorage({
     }
 })
 
+//Upload for Multer image upload
 const upload = multer({
     storage: storage,
     limits: {filesize: 1000000},
@@ -25,6 +27,7 @@ const upload = multer({
     }
 }).single('image');
 
+//Helper function to check file types for Multer image upload
 function checkFileType(file, cb) {
     const filetypes = /jpeg|jpg|png|gif/;
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -37,9 +40,10 @@ function checkFileType(file, cb) {
     }
 }
 
-
+//Set EJS for views
 app.set('view engine', 'ejs');
 
+//
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: true,
@@ -49,21 +53,26 @@ app.use(session({
     }
 }))
 
+//Method override for put and delete
 app.use(methodOverride('_method'));
 
+//Connection for static files
 app.use(express.static(`${__dirname}/public`));
 
+//Body parser
 app.use(express.urlencoded({extended: false}));
 
+//Controllers connections
 app.use('/locations', locationsController);
 app.use('/pets', petsController);
 app.use('/', authController);
 
-
+//Home page
 app.get('/', (req, res) => {
     res.render('index')
 });
 
+//404 page
 app.get('*', (req, res) => {
     res.send('<h1>404 Page Not Found</h1>');
 })

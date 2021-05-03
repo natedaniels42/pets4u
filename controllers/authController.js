@@ -3,14 +3,17 @@ const router = express.Router();
 const db = require('../models');
 const bcrypt = require('bcryptjs');
 
+//Login Get Route
 router.get('/login', (req, res) => {
     res.render('login');
 })
 
+//Register Get Route
 router.get('/register', (req, res) => {
     res.render('register');
 })
 
+//Login Post Route
 router.post('/login', (req, res) => {
     console.log(req.body);
     db.User.findOne({email: req.body.email}, (err, foundUser) => {
@@ -40,6 +43,7 @@ router.post('/login', (req, res) => {
     })
 })
 
+//Register Post Route
 router.post('/register', (req, res) => {
     db.User.findOne({email: req.body.email}, (err, foundUser) => {
         if(err) return console.log(err);

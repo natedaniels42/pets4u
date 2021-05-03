@@ -901,6 +901,7 @@ const petList = [
     }
 ];
 
+//Seed pets
 db.Pet.deleteMany({}, (err, deletedPets) => {
     if(err) console.log(err);
     

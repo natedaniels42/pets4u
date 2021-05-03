@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+//Locations Get Route for specific location
 router.get('/:id', (req, res) => {
     db.Location.findOne({city: req.params.id}, (err, foundLocation) => {
         if (err) console.log(err);
@@ -32,6 +33,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//Locations get all locations
 router.get('/', (req, res) => {
     db.Location.find({}, (err, allLocations) => {
        if(err) console.log(err); 

@@ -11,6 +11,7 @@ const locationSchema = new mongoose.Schema({
         required: true
         }],
     pets: [{
+        //Connect pets schema to locations schema
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Pet'
     }],

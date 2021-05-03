@@ -24,7 +24,8 @@ const locationsList = [
         city: [ 'Fairfax','Lorton','Fredricksburg']
     }
 ];
-  
+
+//Seed locations
 db.Location.deleteMany({}, (err, deletedLocations) => {
     if(err) console.log(err);
     
